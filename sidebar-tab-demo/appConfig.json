@@ -1,0 +1,324 @@
+{
+  "general": {
+    "userAgentRegexes": [],
+    "replaceStrings": [],
+    "languages": [],
+    "userAgentAdd": "gonative",
+    "useWKWebView": true,
+    "enableWindowOpen": true,
+    "useCrosswalkWebView": false,
+    "forceScreenOrientation": null,
+    "initialUrl": "https://gonativeio.github.io/gonative-demos/public/sidebar-tab-demo.html",
+    "appName": "GoNative Sidebar/Tab Navigation",
+    "publicKey": "palbkd"
+  },
+  "navigation": {
+    "iosSettings": {},
+    "tabNavigation": {
+      "tabSelectionConfig": [
+        {
+          "id": "1",
+          "regex": "https://gonativeio.github.io/gonative-demos/public/about.*"
+        },
+        {
+          "id": "2",
+          "regex": "https://gonativeio.github.io/gonative-demos/public/contact.*"
+        }
+      ],
+      "tabMenus": [
+        {
+          "items": [
+            {
+              "subLinks": [],
+              "label": "Home",
+              "url": "https://gonativeio.github.io/gonative-demos/public/sidebar-tab-demo.html",
+              "icon": "fa-home"
+            },
+            {
+              "subLinks": [],
+              "label": "Contact Us",
+              "url": "https://gonativeio.github.io/gonative-demos/public/contact.html",
+              "icon": "fa-envelope-o"
+            }
+          ],
+          "id": "1"
+        },
+        {
+          "items": [
+            {
+              "subLinks": [],
+              "label": "Home",
+              "url": "https://gonativeio.github.io/gonative-demos/public/sidebar-tab-demo.html",
+              "icon": "fa-home"
+            },
+            {
+              "subLinks": [],
+              "label": "About Us",
+              "url": "https://gonativeio.github.io/gonative-demos/public/about.html",
+              "icon": "fa-user"
+            }
+          ],
+          "id": "2"
+        }
+      ],
+      "active": true
+    },
+    "sidebarNavigation": {
+      "menuSelectionConfig": {
+        "testURL": null,
+        "redirectLocations": [
+          {
+            "regex": null,
+            "menuName": "default",
+            "loggedIn": false
+          },
+          {
+            "regex": ".*",
+            "menuName": "default",
+            "loggedIn": true
+          }
+        ]
+      },
+      "menus": [
+        {
+          "items": [
+            {
+              "subLinks": [],
+              "label": "Contact",
+              "url": "https://gonativeio.github.io/gonative-demos/public/contact.html",
+              "icon": "fa-envelope-o"
+            },
+            {
+              "subLinks": [],
+              "label": "About",
+              "url": "https://gonativeio.github.io/gonative-demos/public/about.html",
+              "icon": "fa-info-circle"
+            }
+          ],
+          "name": "default",
+          "active": true
+        },
+        {
+          "items": [
+            {
+              "subLinks": [],
+              "label": "Sample Home",
+              "url": "https://gonativeio.github.io/gonative-demos/public//home"
+            },
+            {
+              "subLinks": [],
+              "label": "Sample About",
+              "url": "https://gonativeio.github.io/gonative-demos/public//about"
+            }
+          ],
+          "name": "loggedIn",
+          "active": false
+        }
+      ]
+    },
+    "regexInternalExternal": {
+      "rules": [
+        {
+          "regex": "^(?!https?://).*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/login.php.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/dialog.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/v1\\.0/.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/oauth.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/v2\\.0/.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com/checkpoint.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*facebook\\.com.*",
+          "internal": true
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*plus\\.google\\.com/share.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*twitter\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*instagram\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://maps\\.google\\.com.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*linkedin\\.com/.*",
+          "internal": false
+        },
+        {
+          "regex": "https?://([-\\w]+\\.)*google\\.com/maps/search/.*",
+          "internal": false
+        },
+        {
+          "regex": ".*",
+          "internal": true
+        }
+      ],
+      "active": false
+    },
+    "androidPullToRefresh": false,
+    "iosPullToRefresh": true,
+    "navigationTitles": {
+      "titles": [
+        {}
+      ],
+      "active": true
+    },
+    "ignorePageFinishedRegexes": [],
+    "swipeGestures": false,
+    "androidShowRefreshButton": false,
+    "iosShowRefreshButton": false,
+    "deepLinkDomains": [],
+    "navigationLevels": {
+      "levels": [
+        {}
+      ],
+      "active": false
+    },
+    "toolbarNavigation": {
+      "visibility": "anyItemEnabled",
+      "items": [
+        {
+          "system": "back"
+        }
+      ]
+    },
+    "redirects": []
+  },
+  "styling": {
+    "iosLaunchScreen": {
+      "backgroundColor": "#1E496E",
+      "backgroundImage": "https://s3.amazonaws.com/gonativeio/images_generated/1616181892880_n6cz9h060yn4y_1E496E_1_2x2.png",
+      "centerImage": "https://s3.amazonaws.com/gonativeio/images_generated/1616181930828_4mm4hqvtb32d2.png"
+    },
+    "androidLaunchImages": {
+      "mdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1617891179907_cva5yhnq42pm8_180x180.9.png",
+      "hdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1617891179907_pbd4zc0vc42pg_270x270.9.png",
+      "xhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1617891179907_g0vv3fa1g9380_360x360.9.png",
+      "xxhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1617891179907_tj26e5m7x7xpj_540x540.9.png",
+      "xxxhdpi": "https://s3.amazonaws.com/gonativeio/images_generated/1617891179907_pda57chxveguw_720x720.9.png"
+    },
+    "transitionInteractiveDelayMax": 0.2,
+    "menuAnimationDuration": 0.15,
+    "androidShowSplash": true,
+    "disableAnimations": false,
+    "hideWebviewAlpha": 0.5,
+    "showActionBar": true,
+    "showNavigationBar": true,
+    "iosTheme": "light",
+    "androidTheme": "Light.DarkActionBar",
+    "androidSidebarBackgroundColor": "#FFFFFF",
+    "androidSidebarForegroundColor": "#1E496E",
+    "androidHideTitleInActionBar": true,
+    "navigationTitleImage": true,
+    "icon": "https://gonativeio.s3.amazonaws.com/uploads/h9vn6feaenz06_1616181804496.png",
+    "navigationTitleImageLocation": "https://gonativeio.s3.amazonaws.com/uploads/01z5nwjxp853p_1616182071268.png",
+    "androidHeaderImage": "https://gonativeio.s3.amazonaws.com/uploads/c88yx82n35rz6_1616182110768.png",
+    "androidActionBarForegroundColor": "#1E496E",
+    "androidStatusBarBackgroundColor": "#1E496E",
+    "iosHeaderImage": "https://gonativeio.s3.amazonaws.com/uploads/bwuck431wugbm_1616182151195.png",
+    "androidSidebarSeparatorColor": "#cccccc",
+    "androidTabBarTextColor": "#ffffff",
+    "androidTabBarIndicatorColor": "#ffffff",
+    "androidPullToRefreshColor": "#1E496E",
+    "customCSS": ".navigation-section{\ndisplay:none !important;\n}",
+    "iosTitleColor": "#1E496E",
+    "iosTintColor": "#1E496E",
+    "iosSidebarTextColor": "#1E496E",
+    "androidActionBarBackgroundColor": "#FFFFFF",
+    "androidTabBarBackgroundColor": "#1E496E"
+  },
+  "forms": {
+    "interceptForms": {
+      "forms": []
+    },
+    "search": {
+      "active": false
+    },
+    "loginConfig": {
+      "formSelector": null,
+      "loginIsFirstPage": false,
+      "formInputs": []
+    },
+    "signupConfig": {
+      "active": false,
+      "formSelector": null,
+      "formInputs": []
+    }
+  },
+  "permissions": {
+    "usesGeolocation": true,
+    "androidDownloadToPublicStorage": false,
+    "enableWebRTC": false
+  },
+  "publishing": {},
+  "performance": {
+    "webviewPools": [
+      {
+        "urls": [
+          {
+            "disown": "reload"
+          }
+        ]
+      }
+    ]
+  },
+  "services": {
+    "push": {
+      "active": false
+    },
+    "analytics": {
+      "active": false
+    },
+    "parse": {
+      "active": false,
+      "pushEnabled": false
+    },
+    "facebook": {
+      "active": false
+    },
+    "oneSignal": {
+      "active": false,
+      "notificationExtension": false
+    },
+    "registration": {
+      "active": false,
+      "endpoints": [
+        {
+          "url": null,
+          "urlRegex": null,
+          "dataType": [
+            "parse",
+            "oneSignal",
+            "xtremepush"
+          ]
+        }
+      ]
+    }
+  }
+}

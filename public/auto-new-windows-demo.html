@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GoNative Auto New Windows Demo</title>
+
+    <style>
+      hr {
+        width: 75%;
+        border-top: 2px solid rgba(0,0,0,.5) !important;
+      }
+
+      #message {
+        padding: 20px 0px; 
+        text-align: center;
+      }
+
+      pre {
+        margin-bottom: 0px !important;
+      }
+
+      .btn-demo {
+        text-align: center;
+        width: 320px;
+      }
+
+      .btn-primary.btn-demo {         
+        width: 5rem;
+        margin-top: 15px;
+      }
+
+      .code-block {
+        display: none;
+        text-align: left;
+        margin-left: 10px; 
+        margin-right: 10px;
+      }
+    </style>
+
+    <script>
+      function setAutoNewWindows() {
+        var json = JSON.stringify({
+          active: true,
+          levels: [{
+            regex: "https://gonativeio.github.io/gonative-demos/public/auto-new-windows-demo.html/?",
+            level: 1
+          }, {
+            regex: "https://gonativeio.github.io/gonative-demos/public/contact.html/?",
+            level: 1
+          }, {
+            regex: "https://gonativeio.github.io/gonative-demos/public/about.html/?",
+            level: 2
+          }]
+      });
+      window.location.href = 'gonative://navigationLevels/set?persist=true&data=' + encodeURIComponent(json);
+      }
+
+      function revertAutoNewWindowsDefinition() {
+        if (navigator.userAgent.indexOf('gonative') > -1) {
+          window.location.href = 'gonative://navigationLevels/set?persist=true';
+        }
+      }
+    </script>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- highlight.js for code block syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/monokai-sublime.min.css" integrity="sha512-/l4iViNMhxR5MhSlak3Yw/L/7qUBifVy7MpLjeJTc8BPMRFbGplGN0xqufCDwhSdxSnVgy+e/OYsNnU75K3yyQ==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js" integrity="sha512-s+tOYYcC3Jybgr9mVsdAxsRYlGNq4mlAurOrfNuGMQ/SCofNPu92tjE7YRZCsdEtWL1yGkqk15fU/ark206YTg==" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <div id="message">     
+      <button id='default-nav-hierarchy-btn' class="btn btn-secondary btn-demo">View Default Auto New Windows Configuration</button>
+      <div id='default-nav-hierarchy-code' class="code-block">
+        <pre>
+          <code class='javascript'>[
+  {
+    "regex": "https://gonativeio.github.io/gonative-demos/public/auto-new-windows-demo.html/?",
+    "level": 1
+  },
+  {
+    "regex": "https://gonativeio.github.io/gonative-demos/public/contact.html/?",
+    "level": 2
+  },
+  {
+    "regex": "https://gonativeio.github.io/gonative-demos/public/about.html/?",
+    "level": 3
+  }
+]</code>
+        </pre>
+      </div>
+      <hr>
+      <button id='nav-hierarchy-btn' class="btn btn-secondary btn-demo">Set Auto New Windows</button>
+      <div id='nav-hierarchy-code' class="code-block">
+        <div class="text-center">
+          <button class="btn btn-primary btn-demo" onclick="setAutoNewWindows();">Execute</button>
+        </div>
+        <pre>
+          <code class='javascript'>var json = JSON.stringify({
+    active: true,
+    levels: [{
+      regex: "https://gonativeio.github.io/gonative-demos/public/auto-new-windows-demo.html/?",
+      level: 1
+    }, {
+      regex: "https://gonativeio.github.io/gonative-demos/public/contact.html/?",
+      level: 1
+    }, {
+      regex: "https://gonativeio.github.io/gonative-demos/public/about.html/?",
+      level: 2
+    }]
+});
+window.location.href = 'gonative://navigationLevels/set?persist=true&data=' + encodeURIComponent(json);</code>
+        </pre>
+      </div>
+      <hr>
+      <button id='revert-nav-hierarchy-btn' class="btn btn-secondary btn-demo">Revert Auto New Windows to Default Definition</button>
+      <div id='revert-nav-hierarchy-code' class="code-block">
+        <div class="text-center">
+          <button class="btn btn-primary btn-demo" onclick="revertAutoNewWindowsDefinition();">Execute</button>
+        </div>
+        <pre>
+          <code class='javascript'>if (navigator.userAgent.indexOf('gonative') > -1) {
+  window.location.href = 'gonative://navigationLevels/set?persist=true';
+}</code>
+        </pre>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        $('#default-nav-hierarchy-btn').click(function() {
+          $('#nav-hierarchy-code').hide();
+          $('#revert-nav-hierarchy-code').hide();
+
+          if($('#default-nav-hierarchy-code').css('display') == 'none')
+            $('#default-nav-hierarchy-code').show();
+          else
+            $('#default-nav-hierarchy-code').hide();
+        });
+        $('#nav-hierarchy-btn').click(function() {
+          $('#default-nav-hierarchy-code').hide();
+          $('#revert-nav-hierarchy-code').hide();
+
+          if($('#nav-hierarchy-code').css('display') == 'none')
+            $('#nav-hierarchy-code').show();
+          else
+            $('#nav-hierarchy-code').hide();
+        });
+        $('#revert-nav-hierarchy-btn').click(function() {
+          $('#default-nav-hierarchy-code').hide();
+          $('#nav-hierarchy-code').hide();
+
+          if($('#revert-nav-hierarchy-code').css('display') == 'none')
+            $('#revert-nav-hierarchy-code').show();
+          else
+            $('#revert-nav-hierarchy-code').hide();
+        });
+
+        $('.btn-primary.btn-demo').click(function() { // Execute button is clicked, so hide all code blocks
+          $('#default-nav-hierarchy-code').hide();
+          $('#nav-hierarchy-code').hide();
+          $('#revert-nav-hierarchy-code').hide();
+        });
+      });
+    </script>
+  </body>
+</html>
