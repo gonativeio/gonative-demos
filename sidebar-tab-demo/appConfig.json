@@ -32,13 +32,13 @@
               "subLinks": [],
               "label": "Home",
               "url": "https://gonativeio.github.io/gonative-demos/sidebar-tab-demo.html",
-              "icon": "fa-home"
+              "icon": "fas fa-home"
             },
             {
               "subLinks": [],
               "label": "Contact Us",
               "url": "https://gonativeio.github.io/gonative-demos/contact.html",
-              "icon": "fa-envelope-o"
+              "icon": "fas fa-envelope-o"
             }
           ],
           "id": "1"
@@ -49,13 +49,13 @@
               "subLinks": [],
               "label": "Home",
               "url": "https://gonativeio.github.io/gonative-demos/sidebar-tab-demo.html",
-              "icon": "fa-home"
+              "icon": "fas fa-home"
             },
             {
               "subLinks": [],
               "label": "About Us",
               "url": "https://gonativeio.github.io/gonative-demos/about.html",
-              "icon": "fa-user"
+              "icon": "fas fa-user"
             }
           ],
           "id": "2"
@@ -86,13 +86,13 @@
               "subLinks": [],
               "label": "Contact",
               "url": "https://gonativeio.github.io/gonative-demos/contact.html",
-              "icon": "fa-envelope-o"
+              "icon": "fas fa-envelope-o"
             },
             {
               "subLinks": [],
               "label": "About",
               "url": "https://gonativeio.github.io/gonative-demos/about.html",
-              "icon": "fa-info-circle"
+              "icon": "fas fa-info-circle"
             }
           ],
           "name": "default",

@@ -56,13 +56,13 @@
               "subLinks": [],
               "label": "Contact",
               "url": "https://gonativeio.github.io/gonative-demos/contact.html",
-              "icon": "fa-envelope-o"
+              "icon": "fas fa-envelope-o"
             },
             {
               "subLinks": [],
               "label": "About",
               "url": "https://gonativeio.github.io/gonative-demos/about.html",
-              "icon": "fa-info-circle"
+              "icon": "fas fa-info-circle"
             }
           ],
           "name": "default",
