@@ -8,7 +8,7 @@
     "enableWindowOpen": true,
     "useCrosswalkWebView": false,
     "forceScreenOrientation": null,
-    "initialUrl": "https://gonativeio.github.io/gonative-demos/public/advanced-navigation-demo.html",
+    "initialUrl": "https://gonativeio.github.io/gonative-demos/advanced-navigation-demo.html",
     "appName": "Advanced Nav Demo",
     "publicKey": "lbemeo"
   },
@@ -55,13 +55,13 @@
             {
               "subLinks": [],
               "label": "Contact",
-              "url": "https://gonativeio.github.io/gonative-demos/public/contact.html",
+              "url": "https://gonativeio.github.io/gonative-demos/contact.html",
               "icon": "fa-envelope-o"
             },
             {
               "subLinks": [],
               "label": "About",
-              "url": "https://gonativeio.github.io/gonative-demos/public/about.html",
+              "url": "https://gonativeio.github.io/gonative-demos/about.html",
               "icon": "fa-info-circle"
             }
           ],
@@ -73,12 +73,12 @@
             {
               "subLinks": [],
               "label": "Sample Home",
-              "url": "https://gonativeio.github.io/gonative-demos/public//home"
+              "url": "https://gonativeio.github.io/gonative-demos//home"
             },
             {
               "subLinks": [],
               "label": "Sample About",
-              "url": "https://gonativeio.github.io/gonative-demos/public//about"
+              "url": "https://gonativeio.github.io/gonative-demos//about"
             }
           ],
           "name": "loggedIn",
@@ -156,15 +156,15 @@
     "navigationTitles": {
       "titles": [
         {
-          "regex": "https://gonativeio.github.io/gonative-demos/public/advanced-navigation-demo.html",
+          "regex": "https://gonativeio.github.io/gonative-demos/advanced-navigation-demo.html",
           "title": "Home"
         },
         {
-          "regex": "https://gonativeio.github.io/gonative-demos/public/contact.html",
+          "regex": "https://gonativeio.github.io/gonative-demos/contact.html",
           "title": "Contact Us"
         },
         {
-          "regex": "https://gonativeio.github.io/gonative-demos/public/about.html",
+          "regex": "https://gonativeio.github.io/gonative-demos/about.html",
           "title": "About"
         }
       ],
