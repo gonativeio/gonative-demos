@@ -8,7 +8,7 @@
     "enableWindowOpen": true,
     "useCrosswalkWebView": false,
     "forceScreenOrientation": null,
-    "initialUrl": "https://gonativeio.github.io/gonative-demos/public/auto-new-windows-demo.html",
+    "initialUrl": "https://gonativeio.github.io/gonative-demos/auto-new-windows-demo.html",
     "appName": "Auto New Windows Demo",
     "publicKey": "paqmzr"
   },
@@ -55,13 +55,13 @@
             {
               "subLinks": [],
               "label": "Contact",
-              "url": "https://gonativeio.github.io/gonative-demos/public/contact.html",
+              "url": "https://gonativeio.github.io/gonative-demos/contact.html",
               "icon": "fa-envelope-o"
             },
             {
               "subLinks": [],
               "label": "About",
-              "url": "https://gonativeio.github.io/gonative-demos/public/about.html",
+              "url": "https://gonativeio.github.io/gonative-demos/about.html",
               "icon": "fa-info-circle"
             }
           ],
@@ -167,15 +167,15 @@
     "navigationLevels": {
       "levels": [
         {
-          "regex": "https://gonativeio.github.io/gonative-demos/public/auto-new-windows-demo.html/?",
+          "regex": "https://gonativeio.github.io/gonative-demos/auto-new-windows-demo.html/?",
           "level": 1
         },
         {
-          "regex": "https://gonativeio.github.io/gonative-demos/public/contact.html/?",
+          "regex": "https://gonativeio.github.io/gonative-demos/contact.html/?",
           "level": 2
         },
         {
-          "regex": "https://gonativeio.github.io/gonative-demos/public/about.html/?",
+          "regex": "https://gonativeio.github.io/gonative-demos/about.html/?",
           "level": 3
         }
       ],
