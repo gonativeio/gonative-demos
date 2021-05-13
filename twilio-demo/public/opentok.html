@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GoNative Opentok Demo</title>
+
+    <style>
+      hr {
+        width: 75%;
+        border-top: 2px solid rgba(0,0,0,.5) !important;
+      }
+
+      #message {
+        padding: 20px; 
+        text-align: center;
+      }
+
+      .btn-primary.btn-demo {         
+        width: 7rem;
+        margin-top: 15px;
+      }
+    </style>
+
+    <script src="/__/firebase/8.4.2/firebase-app.js"></script>
+    <script src="/__/firebase/8.4.2/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script>
+      function startCall() {        
+        if (navigator.userAgent.indexOf('gonative') > -1) {
+          var data = {
+            "apiKey": $('#apiKey').val(),
+            "sessionId": $('#sessionId').val(),
+            "token": $('#token').val()
+          }
+
+          window.location.href = `gonative://opentok/video/join?apiKey=${data.apiKey}&sessionId=${data.sessionId}&token=${data.token}&callback=callback`;
+        }
+      }
+
+      function callback(data) {
+        if (data.error) {
+          $('#join-btn').after(`<br><br><h4>OpenTok Error: ${data.error}</h4>`);
+        }
+        else if(data.status) {
+          $('#join-btn').after(`<br><br><h4>OpenTok Status: ${data.status}</h4>`);
+        }
+      }
+    </script>
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div id="message">
+      <h2>GoNative Opentok Demo</h2><br>
+      <form>
+        <div class="form-group row justify-content-center">
+          <label for="apiKey" class="col-sm-2 col-form-label">apiKey:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="apiKey" value="46610582">
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <label for="sessionId" class="col-sm-2 col-form-label">sessionId:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="sessionId" value="1_MX40NjYxMDU4Mn5-MTYyMDkwNjUzNjI2N343WVgwZVNYbmxzbWYvY1VYUFdtazJUVDh-fg">
+          </div>
+        </div>
+        <div class="form-group row justify-content-center">
+          <label for="token" class="col-sm-2 col-form-label">token:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="token" value="T1==cGFydG5lcl9pZD00NjYxMDU4MiZzaWc9OTkyOTQ5NzhkMTUzNGNhMjEwZDdhYjg4ZGMzNmYwNjVlYTQyNzAxMDpzZXNzaW9uX2lkPTFfTVg0ME5qWXhNRFU0TW41LU1UWXlNRGt3TmpVek5qSTJOMzQzV1Znd1pWTllibXh6YldZdlkxVllVRmR0YXpKVVZEaC1mZyZjcmVhdGVfdGltZT0xNjIwOTA2NTM2Jm5vbmNlPTM5MjA3ODY3NiZyb2xlPXB1Ymxpc2hlciZleHBpcmVfdGltZT0xNjIwOTkyOTM2">
+          </div>
+        </div>
+      </form>
+      <button id="join-btn" class="btn btn-primary btn-demo" onclick="startCall();">Join Call</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  </body>
+</html>
