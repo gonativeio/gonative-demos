@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stream Audio</title>
+</head>
+
+<body>
+    <a onclick="streamMusic(firstTrack)" href="#">Start First Track</a><br/>
+    <a onclick="streamMusic(secondTrack)" href="#">Start Second Track</a><br/>
+    <a onclick="streamMusic(thirdTrack)" href="#">Start Third Track</a><br/>
+    <a onclick="streamMusic(fourthTrack)" href="#">Start Fourth Track</a><br/><br/><br/>
+    <a onclick="streamPlaylist()" href="#">Start Playlist</a><br/><br/><br/>
+    <a href="gonative://backgroundMedia/stop">Stop</a>
+</body>
+
+</html>
+
+<script>
+
+    function streamMusic(track) {
+        window.location.href = "gonative://backgroundMedia/playTrack?track=" + encodeURIComponent(JSON.stringify(track));
+    }
+
+    function streamPlaylist() {
+        window.location.href = "gonative://backgroundMedia/startPlaylist?callback=startPlaylistCallback";
+    }
+
+    function startPlaylistCallback() {
+        return queue;
+    }
+
+    var firstTrack = {
+        "url": "http://shoutcast.beamfm.net:8512",
+        "title": "ShoutCast FM",
+        "album": "Non-Stop Hits",
+        "artist": "Mr. Robot"
+    }
+
+    var secondTrack = {
+        "url": "https://i4.streams.ovh/sc/bluesrad/stream"
+    }
+    
+    var thirdTrack = {
+        "url": "https://seekerzero.com/august.mp3",
+    }
+
+    var fourthTrack = {
+        "url": "http://192.99.8.192:3132/stream",
+        "title": "The IP FM",
+        "album": "Crazy Hits",
+        "artist": "Mr. Lucifer"
+    }
+
+    var queue = {
+        "currentTrackNumber": 0,
+        "tracks": [
+            {
+                "url": "http://shoutcast.beamfm.net:8512",
+                "title": "ShoutCast FM",
+                "album": "Non-Stop Hits",
+                "artist": "Mr. Robot"
+            },
+            {
+                "url": "https://i4.streams.ovh/sc/bluesrad/stream"
+            },
+            {
+                "url": "https://seekerzero.com/august.mp3",
+            },
+            {
+                "url": "http://192.99.8.192:3132/stream",
+                "title": "The IP FM",
+                "album": "Crazy Hits",
+                "artist": "Mr. Lucifer"
+            }
+        ]
+    }
+
+</script>
