@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,70 +21,74 @@
         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="streamTrack(thirdTrack)">Start Third Track</button><br/>
         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="streamTrack(fourthTrack)">Start Fourth Track</button><br/><br/><br/>
         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="streamPlaylist()">Start Playlist</button><br/><br/><br/>
-        <a href="gonative://backgroundMedia/stop"><button type="button" class="btn btn-primary btn-lg btn-block">Stop</button></a>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="stop()">Stop</button>
     </div>
+
+    <script>
+
+        function streamTrack(track) {
+            window.location.href = "gonative://backgroundMedia/playTrack?track=" + encodeURIComponent(JSON.stringify(track));
+        }
+    
+        function streamPlaylist() {
+            window.location.href = "gonative://backgroundMedia/startPlaylist?callback=startPlaylistCallback";
+        }
+    
+        function startPlaylistCallback() {
+            return queue;
+        }
+    
+        function stop() {
+            window.location.href = "gonative://backgroundMedia/stop";
+        }
+    
+        var firstTrack = {
+            "url": "http://shoutcast.beamfm.net:8512",
+            "title": "ShoutCast FM",
+            "album": "Non-Stop Hits",
+            "artist": "Mr. Anonymous"
+        }
+    
+        var secondTrack = {
+            "url": "https://i4.streams.ovh/sc/bluesrad/stream"
+        }
+        
+        var thirdTrack = {
+            "url": "https://gonativeio.github.io/gonative-demos/background-mediaplayer/BeatOne.mp3",
+        }
+    
+        var fourthTrack = {
+            "url": "http://192.99.8.192:3132/stream",
+            "title": "The IP FM",
+            "album": "Crazy Hits",
+            "artist": "DJ Doe"
+        }
+    
+        var queue = {
+            "currentTrackNumber": 0,
+            "tracks": [
+                {
+                    "url": "http://shoutcast.beamfm.net:8512",
+                    "title": "ShoutCast FM",
+                    "album": "Non-Stop Hits",
+                    "artist": "Mr. Anonymous"
+                },
+                {
+                    "url": "https://i4.streams.ovh/sc/bluesrad/stream"
+                },
+                {
+                    "url": "https://gonativeio.github.io/gonative-demos/background-mediaplayer/BeatOne.mp3",
+                },
+                {
+                    "url": "http://192.99.8.192:3132/stream",
+                    "title": "The IP FM",
+                    "album": "Crazy Hits",
+                    "artist": "DJ Doe"
+                }
+            ]
+        }
+    
+    </script>
 </body>
 
 </html>
-
-<script>
-
-    function streamTrack(track) {
-        window.location.href = "gonative://backgroundMedia/playTrack?track=" + encodeURIComponent(JSON.stringify(track));
-    }
-
-    function streamPlaylist() {
-        window.location.href = "gonative://backgroundMedia/startPlaylist?callback=startPlaylistCallback";
-    }
-
-    function startPlaylistCallback() {
-        return queue;
-    }
-
-    var firstTrack = {
-        "url": "http://shoutcast.beamfm.net:8512",
-        "title": "ShoutCast FM",
-        "album": "Non-Stop Hits",
-        "artist": "Mr. Anonymous"
-    }
-
-    var secondTrack = {
-        "url": "https://i4.streams.ovh/sc/bluesrad/stream"
-    }
-    
-    var thirdTrack = {
-        "url": "https://gonativeio.github.io/gonative-demos/background-mediaplayer/BeatOne.mp3",
-    }
-
-    var fourthTrack = {
-        "url": "http://192.99.8.192:3132/stream",
-        "title": "The IP FM",
-        "album": "Crazy Hits",
-        "artist": "DJ Doe"
-    }
-
-    var queue = {
-        "currentTrackNumber": 0,
-        "tracks": [
-            {
-                "url": "http://shoutcast.beamfm.net:8512",
-                "title": "ShoutCast FM",
-                "album": "Non-Stop Hits",
-                "artist": "Mr. Anonymous"
-            },
-            {
-                "url": "https://i4.streams.ovh/sc/bluesrad/stream"
-            },
-            {
-                "url": "https://gonativeio.github.io/gonative-demos/background-mediaplayer/BeatOne.mp3",
-            },
-            {
-                "url": "http://192.99.8.192:3132/stream",
-                "title": "The IP FM",
-                "album": "Crazy Hits",
-                "artist": "DJ Doe"
-            }
-        ]
-    }
-
-</script>
