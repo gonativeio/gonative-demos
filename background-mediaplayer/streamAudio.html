@@ -2,23 +2,33 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Stream Audio</title>
+    <style>
+        .centerDiv {
+            margin: auto;
+            width: 75%;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <a onclick="streamMusic(firstTrack)" href="#">Start First Track</a><br/>
-    <a onclick="streamMusic(secondTrack)" href="#">Start Second Track</a><br/>
-    <a onclick="streamMusic(thirdTrack)" href="#">Start Third Track</a><br/>
-    <a onclick="streamMusic(fourthTrack)" href="#">Start Fourth Track</a><br/><br/><br/>
-    <a onclick="streamPlaylist()" href="#">Start Playlist</a><br/><br/><br/>
-    <a href="gonative://backgroundMedia/stop">Stop</a>
+    <div class="centerDiv">
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="streamTrack(firstTrack)">Start First Track</button><br/>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="streamTrack(secondTrack)">Start Second Track</button><br/>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="streamTrack(thirdTrack)">Start Third Track</button><br/>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="streamTrack(fourthTrack)">Start Fourth Track</button><br/><br/><br/>
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="streamPlaylist()">Start Playlist</button><br/><br/><br/>
+        <a href="gonative://backgroundMedia/stop"><button type="button" class="btn btn-primary btn-lg btn-block">Stop</button></a>
+    </div>
 </body>
 
 </html>
 
 <script>
 
-    function streamMusic(track) {
+    function streamTrack(track) {
         window.location.href = "gonative://backgroundMedia/playTrack?track=" + encodeURIComponent(JSON.stringify(track));
     }
 
@@ -34,7 +44,7 @@
         "url": "http://shoutcast.beamfm.net:8512",
         "title": "ShoutCast FM",
         "album": "Non-Stop Hits",
-        "artist": "Mr. Anonymous"
+        "artist": "Mr. Robot"
     }
 
     var secondTrack = {
@@ -42,14 +52,14 @@
     }
     
     var thirdTrack = {
-        "url": "https://github.com/gonativeio/gonative-demos/raw/main/background-mediaplayer/Beat%20One.mp3",
+        "url": "https://github.com/gonativeio/gonative-demos/raw/main/background-mediaplayer/BeatOne.mp3",
     }
 
     var fourthTrack = {
         "url": "http://192.99.8.192:3132/stream",
         "title": "The IP FM",
         "album": "Crazy Hits",
-        "artist": "DJ Doe"
+        "artist": "Mr. Lucifer"
     }
 
     var queue = {
@@ -59,19 +69,19 @@
                 "url": "http://shoutcast.beamfm.net:8512",
                 "title": "ShoutCast FM",
                 "album": "Non-Stop Hits",
-                "artist": "Mr. Anonymous"
+                "artist": "Mr. Robot"
             },
             {
                 "url": "https://i4.streams.ovh/sc/bluesrad/stream"
             },
             {
-                "url": "https://github.com/gonativeio/gonative-demos/raw/main/background-mediaplayer/Beat%20One.mp3",
+                "url": "https://github.com/gonativeio/gonative-demos/raw/main/background-mediaplayer/BeatOne.mp3",
             },
             {
                 "url": "http://192.99.8.192:3132/stream",
                 "title": "The IP FM",
                 "album": "Crazy Hits",
-                "artist": "DJ Doe"
+                "artist": "Mr. Lucifer"
             }
         ]
     }
