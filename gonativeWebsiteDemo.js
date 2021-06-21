@@ -3,7 +3,7 @@ function previewSite() {
   if (previewUrl) {
     window.open(previewUrl);
   } else {
-    alert("Please provide a url to preview in this app.")
+    $("#preview-url").focus();
   }
 }
 
@@ -13,7 +13,7 @@ function setTabNavigation() {
     "items": [{
       "icon": "fas fa-home", //optional
       "label": "Home",
-      "url": "https://gonativeio.webflow.io/"
+      "url": "https://test.gonative.io/demo"
     }, {
       "icon": "fas fa-globe", //optional
       "label": "Your Site",
@@ -32,35 +32,49 @@ function setTabNavigation() {
 function setSidebarNavigation() {
   var items = [{
     label: "Examples",
-    url: "https://gonativeio.webflow.io/examples",
+    url: "https://test.gonative.io/examples",
   }, {
     label: "Push Notifications",
-    url: "https://gonativeio.webflow.io/push"
+    url: "https://test.gonative.io/push"
   }, {
     label: "Native Plugins",
-    url: "https://gonativeio.webflow.io/plugins"
+    url: "https://test.gonative.io/plugins"
   }, {
     label: "FAQ",
-    url: "https://gonativeio.webflow.io/faq"
+    url: "https://test.gonative.io/faq"
   }, {
     label: "Pricing",
-    url: "https://gonativeio.webflow.io/pricing"
+    url: "https://test.gonative.io/pricing"
   }];
   var json = JSON.stringify(items);
 
   window.location.href = "gonative://sidebar/setItems?items=" + encodeURIComponent(json);
 }
 
+function setSharePage() {
+  var sharePageUrl = "https://gonative.io";
+  window.location.href = "gonative://share/sharePage?url=" + encodeURIComponent(sharePageUrl);
+}
+
 $(document).ready(function() {
-  $(".col.hero-left a").eq(0).click(function() { // 1st button - Bottom Tab Bar
+  $("#add-bottom-tab-bar").click(function() { // Bottom Tab Bar
     setTabNavigation();
   });
 
-  $(".col.hero-left a").eq(1).click(function() { // 2nd button - Sidebar Navigation
+  $("#add-sidebar-nav").click(function() { // Sidebar Navigation
+    $('#top-nav').hide();
     setSidebarNavigation();
   });
 
-  $("#build-form :submit").click(function() { // Preview Button
+  $("#launch-preview").click(function() { // Preview Button
     previewSite();
+  });
+
+  $("#share").click(function() { // Share Button
+    setSharePage();
+  });
+
+  $("#app-settings").click(function() { // Settings Button
+    window.location.href = "gonative://open/app-settings";
   });
 });
