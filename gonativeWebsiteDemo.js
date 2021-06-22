@@ -13,7 +13,7 @@ function setTabNavigation() {
     "items": [{
       "icon": "fas fa-home", //optional
       "label": "Home",
-      "url": "https://test.gonative.io/demo"
+      "url": "https://gonative.io/demo"
     }, {
       "icon": "fas fa-globe", //optional
       "label": "Your Site",
@@ -24,35 +24,35 @@ function setTabNavigation() {
       "url": "https://en.wikipedia.org/wiki/Main_Page"
     }]
   };
-
-  var json = JSON.stringify(tabs);
-  window.location.href = 'gonative://tabs/setTabs?tabs=' + encodeURIComponent(json);
+  var jsonTabs = JSON.stringify(tabs);
+  var commands = ['gonative://tabs/setTabs?tabs=' + encodeURIComponent(jsonTabs), 'gonative://tabs/select/0'];
+  var jsonCommands = JSON.stringify({urls: commands});
+  window.location.href = 'gonative://nativebridge/multi?data=' + encodeURIComponent(jsonCommands);
 }
 
 function setSidebarNavigation() {
   var items = [{
     label: "Examples",
-    url: "https://test.gonative.io/examples",
+    url: "https://gonative.io/examples",
   }, {
     label: "Push Notifications",
-    url: "https://test.gonative.io/push"
+    url: "https://gonative.io/push"
   }, {
     label: "Native Plugins",
-    url: "https://test.gonative.io/plugins"
+    url: "https://gonative.io/plugins"
   }, {
     label: "FAQ",
-    url: "https://test.gonative.io/faq"
+    url: "https://gonative.io/faq"
   }, {
     label: "Pricing",
-    url: "https://test.gonative.io/pricing"
+    url: "https://gonative.io/pricing"
   }];
-  var json = JSON.stringify(items);
-
-  window.location.href = "gonative://sidebar/setItems?items=" + encodeURIComponent(json);
+  var jsonItems = JSON.stringify(items);
+  window.location.href = 'gonative://sidebar/setItems?items=' + encodeURIComponent(jsonItems);
 }
 
-function setSharePage() {
-  var sharePageUrl = "https://gonative.io";
+function sharePage() {
+  var sharePageUrl = $("#preview-url").val() || 'https://gonative.io';
   window.location.href = "gonative://share/sharePage?url=" + encodeURIComponent(sharePageUrl);
 }
 
@@ -71,7 +71,7 @@ $(document).ready(function() {
   });
 
   $("#share").click(function() { // Share Button
-    setSharePage();
+    sharePage();
   });
 
   $("#app-settings").click(function() { // Settings Button
