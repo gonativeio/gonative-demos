@@ -77,4 +77,9 @@ $(document).ready(function() {
   $("#app-settings").click(function() { // Settings Button
     window.location.href = "gonative://open/app-settings";
   });
+  
+  $("#statusbar-color").click(function() { // Status Bar Button
+    window.location.href = "gonative://statusbar/set?style=light&color=1e496e";
+  });
+  
 });
