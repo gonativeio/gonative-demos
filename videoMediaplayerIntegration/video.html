@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Test</title>
+</head>
+
+<body>
+    <button onclick="playPause()">Play/Pause</button>
+    <br><br>
+    <video width="320" height="240" controls id="videoID">
+        <source src="https://gonativeio.github.io/gonative-demos/videoMediaplayerIntegration/jfk_speech.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br />
+    <br />
+    <br />
+    <script>
+        var videoElement = document.getElementById('videoID');
+
+        function playPause() {
+            if (videoElement.paused)
+                videoElement.play();
+            else
+                videoElement.pause();
+        }
+
+        function getPlayerStatus() {
+            var status = {
+                'currentTime': videoElement.currentTime,
+                'isPaused': videoElement.paused,
+                'album': 'Kennedy',
+                'artist': 'JFK',
+                'title': 'JFK Speech',
+                'artwork': 'https://gonativeio.github.io/gonative-demos/videoMediaplayerIntegration/sample_thumbnail.jpeg',
+                'url': videoElement.currentSrc
+            };
+            return status;
+        }
+
+        function updatePlayerStatus(mediaPlayerStatus) {
+            // if currentTime not provided, play/pause only
+            if(mediaPlayerStatus.currentTime){
+                videoElement.currentTime = mediaPlayerStatus.currentTime / 1000;
+            }
+            // play/pause based on whether the mediaplayer was playing/paused before resuming the app
+            if (mediaPlayerStatus.isPaused && !videoElement.paused) {
+                videoElement.pause();
+                alert("Pausing the video at " + mediaPlayerStatus.currentTime / 1000);
+            }
+            else if (!mediaPlayerStatus.isPaused && videoElement.paused) {
+                videoElement.play();
+                alert("Playing the video at " + mediaPlayerStatus.currentTime / 1000);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
